@@ -37,4 +37,4 @@ name: Build and push
         context: .
         platforms: linux/amd64
         push: true
-        tags: abder0/python-ci:latest
+        tags: abder0/python-ci:latest 
