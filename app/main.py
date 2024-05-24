@@ -1,9 +1,11 @@
-from fastapi.testclient import TestClient
-from .main import app
+from fastapi import FastAPI
+import json, os
+from pydantic import BaseModel
+from typing import List, Optional, Dict, Any
 
-client = TestClient(app)
+#Initialize FastAPI app
+app = FastAPI()
 
-def test_read_main():
-    response = client.get("/")
-    assert response.status_code == 200
-    assert response.json() == {"message": "OK"}
+@app.get("/")
+async def test():
+    return {"message": "OK"}
